@@ -420,8 +420,7 @@
 @media (max-width: 768px) {
   .comments-section {
     padding: 1.5rem;
-    width: fit-content;
-    max-width: 320px;
+    
   }
 
   .comment-item {
@@ -439,6 +438,15 @@
 
   .comment-text {
     font-size: 0.9rem;
+  }
+}
+
+
+@media (max-width: 400px) {
+  .comments-section {
+    padding: 1.5rem;
+    max-width: 320px;
+    
   }
 }
 

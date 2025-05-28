@@ -170,3 +170,9 @@
         width: 100%;
     }
 }
+
+@media (max-width: 480px) {
+    .favourites-grid {
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+}
