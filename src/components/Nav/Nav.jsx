@@ -5,7 +5,7 @@ import { useState } from "react";
 import Search from "../Search/Search";
 import './Nav.css'
 import { Link, useLocation } from "react-router-dom";
-import Followings from "../followings/followings";
+import Followings from "../Followings/Followings";
 import Logo from "../Logo/Logo";
 export default function Nav() {
     const location = useLocation(); 
