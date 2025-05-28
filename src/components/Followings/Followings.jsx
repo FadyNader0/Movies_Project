@@ -1,5 +1,5 @@
 import { MdCancel } from "react-icons/md"; 
-import './followings.css'
+import './Followings.css'
 import { useEffect, useState } from 'react'
 import { Link } from "react-router-dom";
 import AddStorage from '../Add-Delete-Localsorage/Add-Delete-Localsorage';
