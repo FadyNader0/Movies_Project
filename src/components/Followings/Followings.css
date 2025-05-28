@@ -1,0 +1,133 @@
+.followers-page {
+    padding: 1rem;
+    /* min-height: 10vh; */
+    background: #1a1a1a;
+}
+
+.page-title {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.followers-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.followers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+}
+
+.follower-card {
+    background: #2a2a2a;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.follower-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.follower-image {
+    position: relative;
+    padding-top: 100%;
+    overflow: hidden;
+}
+
+.follower-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+.unfllow-btn {
+  background-color: red; 
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+.unfllow-btn .x{
+    font-size: 22px;
+}
+.unfllow-btn:hover {
+  background-color: #ff0a16;
+  rotate: 180deg;
+}
+
+
+.follower-card:hover .follower-image img {
+    transform: scale(1.05);
+}
+.follower-card:hover .unfllow-btn{
+    opacity: 1;
+}
+.follower-info {
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to top, #2a2a2a 0%, rgba(42, 42, 42, 0.9) 100%);
+}
+
+.follower-info h3 {
+    color: #fff;
+    font-size: 0.875rem;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+
+.empty-state {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+    font-size: 1rem;
+    background: #2a2a2a;
+    border-radius: 10px;
+    margin: 1rem auto;
+    max-width: 300px;
+}
+.fllow-heart {
+    color: #7a0f0f;
+    font-size: 1.7rem;
+}
+@media (max-width: 640px) {
+    .followers-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 0.75rem;
+    }
+
+    .follower-info h3 {
+        font-size: 0.75rem;
+    }
+
+    .heart-outline,
+    .heart-filled {
+        font-size: 1rem;
+    }
+
+    
+
+}
+@media (max-width: 720px) {
+    .unfllow-btn{
+        display: none;
+    }
+}

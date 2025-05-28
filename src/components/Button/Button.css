@@ -1,0 +1,32 @@
+.cta-button {
+    padding: 1.2rem 3rem;
+    font-size: 1.2rem;
+    background: var(--text-color);
+    border: none;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: 0.5s;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px var(--box-hover-color);
+}
+
+.cta-button:hover:before {
+    left: 100%;
+}

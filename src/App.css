@@ -1,0 +1,63 @@
+@import './theme/colors.css';
+/* start rules  */
+*{
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+ol {
+    list-style: none;
+}
+p{
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+button{
+    border: none;
+    box-shadow: none;
+}
+body{
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 400;
+    background-color: var(--background-color);
+    color: white;
+}
+.pages{
+    margin-left: 202px;
+    margin-top: 78px;
+    
+
+}
+@media (max-width: 720px) {
+    .pages{
+        margin-left: 0px;
+    }
+}
+
+
+
+::-webkit-scrollbar {
+    width: 7px;
+    position: relative;
+    z-index: 99;
+}
+::-webkit-scrollbar-track {
+    background: transparent; 
+}
+::-webkit-scrollbar-thumb {
+    background: red; 
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: red; 
+}
+
+/* end rules  */

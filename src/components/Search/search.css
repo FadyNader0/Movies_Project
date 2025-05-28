@@ -1,0 +1,47 @@
+@import '../../theme/colors.css';
+.active{
+    width: 270px;
+}
+
+.input{
+    position: relative;
+    width: 100%;
+}
+
+.cancel{
+    position: absolute;
+    right: 0px;
+    bottom: 50%;
+    transform: translateY(50%);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 100;
+}
+
+.cancel .cancel-icon{
+    width: 20px;
+    height: 20px;
+}
+
+.active .search-icon{
+    display: none;
+}
+
+.search-link{
+    display: none;
+}
+
+.active .search-link{
+    display: block;
+}
+
+.search-link{
+    color: rgb(240, 240, 240);
+}
+
+.search-comp{
+    background-color: var(--icon-color);
+}

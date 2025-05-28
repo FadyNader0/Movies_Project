@@ -1,0 +1,10 @@
+:root {
+  --background-color: #0a0a0a;
+  --background2-color: #111111;
+  --border-color: #615f5f;
+  --icon-color: #ff0000;
+  --text-color: linear-gradient(45deg, #ff0000, #ff4d4d);
+  --box-color: rgba(255, 0, 0, 0.03);
+  --box-hover-color: rgba(255, 0, 0, 0.05);
+  --box-border-color: rgba(255, 0, 0, 0.1);
+}
