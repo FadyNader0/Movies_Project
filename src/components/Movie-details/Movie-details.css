@@ -106,17 +106,6 @@
   padding-top: 2rem;
 }
 
-.movie-title {
-  font-size: 4.5rem;
-  font-weight: 800;
-  line-height: 1.1;
-  margin-bottom: 2rem;
-  background: linear-gradient(to right, #fff, #e1e1e1);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
 
 .movie-meta-details {
   display: flex;
@@ -270,9 +259,7 @@
     text-align: center;
   }
 
-  .movie-title {
-    font-size: 3.5rem;
-  }
+
 
   .movie-meta-details {
     justify-content: center;
@@ -293,8 +280,8 @@
     padding: 1.5rem;
   }
 
-  .movie-title {
-    font-size: 2.8rem;
+  .movie-tittle {
+    font-size: 2rem;
   }
 
   .movie-overview {
@@ -433,6 +420,8 @@
 @media (max-width: 768px) {
   .comments-section {
     padding: 1.5rem;
+    width: fit-content;
+    max-width: 320px;
   }
 
   .comment-item {
@@ -449,7 +438,7 @@
   }
 
   .comment-text {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -560,13 +549,19 @@
 
 @media (max-width: 768px) {
   .trailer-button {
-    padding: 14px 28px;
-    font-size: 1em;
-    max-width: 200px;
+    padding: 8px 21px;
+    font-size: 0.8rem;
+    max-width: 150px;
+  }
+  .favorites-button{
+    padding: 8px 21px;
+    font-size: 1.5rem;
+    max-width: 150px;
+
   }
 }
 
-/* Cast section styles */
+
 .cast-section {
   margin-top: 2rem;
   padding: 2rem;

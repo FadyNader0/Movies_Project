@@ -4,7 +4,7 @@
   padding: 2rem 4rem;
 }
 
-.movies-page h1 {
+.movies-page .movies-page-tittle {
   font-size: 3rem;
   font-weight: 800;
   margin-bottom: 2rem;
@@ -13,7 +13,7 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
-  background-color: #f5c518;
+
 }
 .movies-page .no-results {
   width: 100%;
@@ -343,5 +343,11 @@
     .actor-name {
         font-size: 2rem;
     }
+    
 }
 
+@media (max-width: 480px) {
+    .movies-grid {
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+}

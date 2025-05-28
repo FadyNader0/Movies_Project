@@ -103,7 +103,7 @@ useEffect(() => {
 
   return (
     <div className="movies-page">
-      <h1>Discover Movies</h1>
+      <h1 className='movies-page-tittle'>Discover Movies</h1>
       <div className="movies-header">
         <div className={`filter-options ${actor && actor !=="" ? "hidden" : ""}`}>
           <div className="filter-group" >
