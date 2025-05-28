@@ -16,10 +16,12 @@ export default function MoviesPage () {
   const [year, setYear] = useState("");
   const [actor, setActor] = useState(null);
   const [actorDetails, setactorDetails] = useState(null);
+  const [refresh , setRefresh] = useState(0);
   const location = useLocation();
   const { GgenreId } = location.state || {};
   const { actorName } = location.state || {};
   const queryParams = new URLSearchParams(location.search);
+  const following = JSON.parse(localStorage.getItem("following")) || [];
   let query = queryParams.get("query");
 
   useEffect(() => {
@@ -99,8 +101,7 @@ useEffect(() => {
   }
 
   fetchMovies();
-}, [page, sort, genre, year, query, actor]);
-
+}, [page, sort, genre, year, query, actor , refresh]);
   return (
     <div className="movies-page">
       <h1 className='movies-page-tittle'>Discover Movies</h1>
@@ -231,16 +232,20 @@ useEffect(() => {
         <button className={`clear-filters-btn unfloow-btn-actor ${actor && actor !=="" ? "view" : ""}`} 
                 onClick={() => 
                   {addStorage('following', actorDetails); 
-                  toast.error(`Removed ${actorDetails?.name} from following list`)
+                  setRefresh(refresh + 1);  
+                  {following.find(item => item.id === actorDetails?.id) ? 
+                    toast.error(`Removed ${actorDetails?.name} from following list`) : 
+                    toast.success(`Added ${actorDetails?.name} to following list`)}
                 }}>
-        Unfollow</button>
+                    {following.find(item => item.id === actorDetails?.id) ? "Unfollow" : 'Follow'}
+        </button>
 
         
       </div>
             
       {query !== null && <h2 className="text-3xl mb-4">Search Results for: <strong>{query}</strong></h2>}
       {movies.length === 0 && query !== null  ? (
-              <h1 className="no-results">No results found</h1>
+              <h1 className="no-results movies-page-tittle">No results found</h1>
       ) : null}
       {movies.length === 0 && query === null  ? (
               <Loader />

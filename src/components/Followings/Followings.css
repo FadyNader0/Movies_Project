@@ -1,7 +1,7 @@
+@import '../../theme/colors.css'; 
 .followers-page {
     padding: 1rem;
-    /* min-height: 10vh; */
-    background: #1a1a1a;
+    background: var(--background2-color);
 }
 
 .page-title {
@@ -52,7 +52,7 @@
     transition: transform 0.3s ease;
 }
 .unfllow-btn {
-  background-color: red; 
+  background-color: var(--icon-color); 
   border-radius: 50%;
   position: absolute;
   top: 5px;
@@ -64,7 +64,7 @@
     font-size: 22px;
 }
 .unfllow-btn:hover {
-  background-color: #ff0a16;
+  background-color: var(--icon-hover-color);
   rotate: 180deg;
 }
 
