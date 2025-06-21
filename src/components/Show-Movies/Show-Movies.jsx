@@ -7,7 +7,7 @@ export default function ShowMovies({movie }) {
       const [selectedMovie, setSelectedMovie] = useState(null);
     return(
         <>
-            <div key={movie.id} className="movie-card">
+            <div key={movie.id} className="movie-card" data-aos="flip-left">
               <div className="movie-poster">
                 <img  src={movie.poster_path 
                       ? `https://image.tmdb.org/t/p/w185/${movie.poster_path}`

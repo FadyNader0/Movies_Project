@@ -4,7 +4,7 @@ export default function addStorage(key, value) {
   const index = data.findIndex(item => item.id === value.id);
 
   if (index === -1) {
-    const updated = [...data, value];
+    const updated = [value, ...data];
     localStorage.setItem(key, JSON.stringify(updated));
   } else {
     data.splice(index, 1); 

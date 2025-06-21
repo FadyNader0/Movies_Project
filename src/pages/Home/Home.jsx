@@ -22,11 +22,11 @@ export default function Home() {
                 <Button props={{ name: 'Start Browsing', to: '/movies-page' }} />
             </div>
 
-            <section className="categories-section">
+            <section className="categories-section" data-aos="fade-up">
                 <Categories />
             </section>
 
-            <section className="devices-section">
+            <section className="devices-section" data-aos="fade-up">
                 <h2>We Provide you discover experience across various devices</h2>
                 <div className="devices-grid">
                     <div className="device-card">
@@ -52,7 +52,7 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="faq-section">
+            <section className="faq-section" data-aos="fade-up">
                     <Faq />
             </section>
         </div>

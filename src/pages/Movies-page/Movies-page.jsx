@@ -104,8 +104,8 @@ useEffect(() => {
 }, [page, sort, genre, year, query, actor , refresh]);
   return (
     <div className="movies-page">
-      <h1 className='movies-page-tittle'>Discover Movies</h1>
-      <div className="movies-header">
+      <h1 className='movies-page-tittle' data-aos="zoom-in-down">Discover Movies</h1>
+      <div className="movies-header" data-aos="zoom-in-down">
         <div className={`filter-options ${actor && actor !=="" ? "hidden" : ""}`}>
           <div className="filter-group" >
             <label>Genre</label>
