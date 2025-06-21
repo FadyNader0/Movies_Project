@@ -45,3 +45,46 @@
 .search-comp{
     background-color: var(--icon-color);
 }
+
+
+.history{
+    position: absolute;
+    background-color: var(--background2-color);
+    width: 240px;
+    min-height: 100px;
+    max-height: 200px;
+    overflow-y: scroll;
+    top: 70px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px var(--background-color);
+    border: 1px solid var(--box-border-color);
+    opacity: 0;
+    display: none;
+    transition: all 0.5s;
+    
+}
+.history-icon{
+    font-size: 22px;
+    margin-right: 10px;
+}
+
+.history p{
+    font-size: 20px;
+}
+
+.history.active{
+    display: block;
+    opacity: 1;
+}
+
+.history .info{
+    margin-bottom: 20px;
+    padding: 0px 5px;
+    transition: all 0.5s;
+}
+
+.history .info:hover{
+    
+    background: var(--icon-color);
+}

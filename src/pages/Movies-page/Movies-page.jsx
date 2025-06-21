@@ -157,7 +157,8 @@ useEffect(() => {
 
         </div>
         <div className={`pagination-buttons ${actor && actor !=="" ? "hidden" : ""}`}>
-          <button  className="page-btn" disabled={page === 1} onClick={() =>setpage(page - 1)}>Prev</button>
+          <button  className="page-btn" disabled={page === 1} onClick={() =>{setpage(page - 1);setRefresh(refresh + 1);setMovies([])}}>
+              Prev</button>
           <p className="page-number">Page 
           <input 
                 className="input-page" 
@@ -171,7 +172,7 @@ useEffect(() => {
                   }
                 }} />
              </p>
-          <button  className="page-btn" disabled={page === 500} onClick={() =>setpage(page+1)}>Next</button>
+          <button  className="page-btn" disabled={page === 500} onClick={() =>{setpage(page + 1);setRefresh(refresh + 1);setMovies([])}}>Next</button>
         </div>
         <div className={`actor-details ${actor && actor !=="" ? "view" : ""}`}>
             <div className="actor-profile">

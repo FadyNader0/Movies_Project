@@ -1,13 +1,17 @@
+import { AiOutlineCloseCircle } from "react-icons/ai"; 
+import { BiHistory } from "react-icons/bi"; 
 import { AiFillCloseCircle } from "react-icons/ai"; 
 import './search.css';
-import { useState, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useRef, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Search() {
     const [isActive, setIsActive] = useState(false);
     const searchInputRef = useRef(null);
     const navigate = useNavigate();
-   
+    const [history, setHistory] = useState([]);
+    const [refresh, setRefresh] = useState(0);
+
 
     const openSearch = () => setIsActive(true);
 
@@ -21,11 +25,25 @@ export default function Search() {
         const query = searchInputRef.current.value.trim();
         if (query) {
             navigate(`/movies-page?query=${encodeURIComponent(query)}`);
+            setRefresh(refresh + 1)
+            const updatedHistory = [query , ...history];
+            setHistory(updatedHistory);
+            localStorage.setItem("history", JSON.stringify(updatedHistory));            
             searchInputRef.current.value = ""; 
             setIsActive(false);
         }
     };
 
+    const handleClearHistory = (movie_history_index) => {
+        history.splice(movie_history_index, 1);
+        localStorage.setItem("history", JSON.stringify(history));
+        setRefresh(refresh + 1);
+    };
+
+    useEffect(() => {
+        const storedFollowings = localStorage.getItem('history') || '[]';
+        setHistory(JSON.parse(storedFollowings));
+    }, [refresh]);
     return (
         <div
             className={`${isActive ? 'active' : ''} search-comp  p-5 overflow-hidden w-[50px] h-[50px]  shadow-[2px_2px_20px_rgba(0,0,0,0.08)] rounded-full flex items-center duration-300`}
@@ -59,8 +77,34 @@ export default function Search() {
                     <button onClick={closeSearch}>
                         <AiFillCloseCircle className="cancel-icon text-white text-xl ml-2" />
                     </button>
+
                 </div>
             )}
+            <div className={`history ${isActive && history.length > 0 ? 'active' : ''}`}>
+                    {history.map((query, index) => (
+                        <div className="flex items-center justify-between info" key={index}>
+                            <Link
+                            key={`${query}-${index}`}
+                            to={`/movies-page?query=${encodeURIComponent(query)}`}
+                            className=" flex items-center"
+                            onClick={closeSearch}
+                            >
+                            <BiHistory className="history-icon" />
+                            <p>{query}</p>
+                            </Link>
+                            <div className="clear-item">
+                                <a href="#">
+                                    <AiOutlineCloseCircle className="cancel-icon text-white text-l ml-2"
+                                    onClick={() => {
+                                        handleClearHistory(index);
+                                    }}
+                                    />
+                                </a>
+                            </div>
+                        </div>
+                    ))}                
+            </div>
+
         </div>
     );
 }
