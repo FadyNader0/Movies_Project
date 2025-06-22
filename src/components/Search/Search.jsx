@@ -40,6 +40,13 @@ export default function Search() {
         setRefresh(refresh + 1);
     };
 
+    const makeHistoryOne = (movie_history_index, movie_history_name) => {
+        history.splice(movie_history_index, 1); 
+        history.unshift(movie_history_name); 
+        localStorage.setItem("history", JSON.stringify(history));
+        setRefresh(refresh + 1); 
+    };
+
     useEffect(() => {
         const storedFollowings = localStorage.getItem('history') || '[]';
         setHistory(JSON.parse(storedFollowings));
@@ -87,7 +94,10 @@ export default function Search() {
                             key={`${query}-${index}`}
                             to={`/movies-page?query=${encodeURIComponent(query)}`}
                             className=" flex items-center"
-                            onClick={closeSearch}
+                            onClick={() => {
+                                makeHistoryOne(index, query);
+                                closeSearch();
+                            }}
                             >
                             <BiHistory className="history-icon" />
                             <p>{query}</p>
