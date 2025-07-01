@@ -17,6 +17,7 @@ export default function MoviesPage () {
   const [actor, setActor] = useState(null);
   const [actorDetails, setactorDetails] = useState(null);
   const [refresh , setRefresh] = useState(0);
+  const [loading, setLoading] = useState(false);
   const location = useLocation();
   const { GgenreId } = location.state || {};
   const { actorName } = location.state || {};
@@ -55,8 +56,9 @@ useEffect(() => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
   async function fetchMovies() {
     try {
+      setLoading(true);
+      setMovies([]);
       let moviesData = [];
-
       if (query && query !== "") {
         const res = await fetch(`https://api.themoviedb.org/3/search/movie?page=${page}&query=${query}`, options);
         const data = await res.json();
@@ -97,11 +99,15 @@ useEffect(() => {
     } catch (err) {
       console.error("Fetch error:", err);
       toast.error("Failed to fetch movies");
+    }finally{
+      setLoading(false);
     }
   }
 
   fetchMovies();
 }, [page, sort, genre, year, query, actor , refresh]);
+
+
   return (
     <div className="movies-page">
       <h1 className='movies-page-tittle' data-aos="zoom-in-down">Discover Movies</h1>
@@ -245,11 +251,14 @@ useEffect(() => {
       </div>
             
       {query !== null && <h2 className="text-3xl mb-4">Search Results for: <strong>{query}</strong></h2>}
-      {movies.length === 0 && query !== null  ? (
+      {year && loading === false && movies.length === 0 ? 
+        ( <h1 className="no-results movies-page-tittle">No results found for this year ' {year} '</h1>)
+        : null
+      }
+      {loading === true && <Loader />}
+
+      {movies.length === 0 && query !== null && loading === false ? (
               <h1 className="no-results movies-page-tittle">No results found</h1>
-      ) : null}
-      {movies.length === 0 && query === null  ? (
-              <Loader />
       ) : null}
       
       <div className="movies-grid">
