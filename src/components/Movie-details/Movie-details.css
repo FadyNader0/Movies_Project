@@ -12,8 +12,16 @@
   position: fixed;
   inset: 0;
   background: linear-gradient(135deg, #0a0a0a 0%, #141414 50%, #1a1a1a 100%);
-  z-index: 1000;
+  z-index: 1100;
   overflow-y: auto;
+  /* width: calc(100% - 2rem);
+  height: calc(100% - 2rem); */
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s ;
 }
 .close-button {
   position: fixed;
@@ -27,9 +35,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  backdrop-filter: blur(10px);
+  transition: all 0.4s ;
   border: 2px solid rgba(255, 255, 255, 0.2);
   z-index: 1001;
 }
@@ -56,8 +62,8 @@
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  transform: perspective(1000px) rotateY(5deg);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: perspective(1000px) rotateY(10deg);
+  transition: all 0.5s ;
   height: 650px;
 }
 
@@ -93,7 +99,7 @@
 }
 
 .movie-poster-details:hover {
-  transform: perspective(1000px) rotateY(0deg) translateY(-10px);
+  transform: perspective(1000px) rotateY(0deg) translateY(-20px);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
 }
 
@@ -160,9 +166,9 @@
 }
 
 .primary-button {
-  background: linear-gradient(135deg, var(--primary-color), #e94560);
+  background: var(--text-color);
   color: white;
-  box-shadow: 0 10px 20px rgba(233, 69, 96, 0.3);
+  box-shadow: 0 10px 20px var(--box-hover-color);
 }
 
 .secondary-button {
@@ -478,7 +484,7 @@
   text-transform: uppercase;
   letter-spacing: 1.5px;
   border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(233, 69, 96, 0.4);
+  box-shadow: 0 10px 25px var(--box-border-color);
   border: none;
   position: relative;
   overflow: hidden;
@@ -505,7 +511,7 @@
 
 .trailer-button:hover {
   transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 15px 30px rgba(233, 69, 96, 0.5);
+  box-shadow: 0 15px 30px var(--box-hover-color);
 }
 
 .trailer-button:hover::before {
@@ -517,26 +523,26 @@
   height: 52px;
   padding: 0;
   border-radius: 50%;
-  background: #fff;
-  color: red;
+  background: var(--text-color);
+  color: #fff;
   font-size: 1.5em;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 10px 25px rgba(233, 69, 96, 0.4);
+  box-shadow: 0 10px 25px var(--box-border-color);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   border: 2px solid transparent;
 }
 
 .favorites-button:hover {
   transform: scale(1.1) rotate(5deg);
-  box-shadow: 0 15px 30px rgba(233, 69, 96, 0.5);
+  box-shadow: 0 15px 30px var(--box-hover-color);
   border-color: rgba(255, 255, 255, 0.3);
 }
 
 .favorites-button.active {
-  background: var(--text-color);
-  color: #fff;
+  background: #fff;
+  color: red;
   animation: pulse 1.5s infinite;
 }
 

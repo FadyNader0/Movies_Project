@@ -111,9 +111,8 @@
 
 .device-card:hover {
     transform: translateY(-15px) scale(1.02);
-    background: ver(--box-hover-color);
-    border-color: rgba(255, 0, 0, 0.3);
-    box-shadow: 0 20px 40px rgba(255, 0, 0, 0.2);
+    border-color: var(--box-border-color);
+    box-shadow: 0 10px 50px var(--box-hover-color);
 }
 
 .device-icon {

@@ -88,3 +88,9 @@
     
     background: var(--icon-color);
 }
+
+@media (max-width: 425px) {
+    .history.active{
+        display: none;
+    }
+}

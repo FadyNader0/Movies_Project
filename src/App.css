@@ -53,11 +53,11 @@ body{
     background: transparent; 
 }
 ::-webkit-scrollbar-thumb {
-    background: var(--icon-color); 
+    background: var(--lines-color); 
   border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--icon-hover-color); 
+    background: #9fb2c2; 
 }
 
 /* end rules  */

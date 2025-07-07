@@ -8,6 +8,7 @@ export default function FavouritesPage() {
     const [refresh, setRefresh] = useState(0);
 
     useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         const storedFavorites = localStorage.getItem('favorites') || '[]';
         setFavourites(JSON.parse(storedFavorites));
     }, [refresh]);

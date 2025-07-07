@@ -3,14 +3,14 @@ import { BiTv } from "react-icons/bi";
 import { AiOutlineTablet } from "react-icons/ai"; 
 import { AiOutlineMobile } from "react-icons/ai"; 
 import './Home.css'
-import homeImage from '../../assets/home-image4.jpg'
+import homeImage from '../../assets/background.png'
 import  Categories  from "../../components/Home-Catogries/Home-Catogries";
 import Faq from '../../components/Faq/Faq'
 import Button from "../../components/Button/Button";
 
 export default function Home() {
 
-
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     return (
         <div className="home-container">
             <div className="movie-grid" style={{ backgroundImage: `url(${homeImage})` }}>

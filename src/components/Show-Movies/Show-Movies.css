@@ -93,7 +93,7 @@
 
 .watch-now:hover {
   transform: scale(1.05);
-  background: linear-gradient(45deg, var(--icon-color), #ff4d4d);
+  background: var(--text-color);
 }
 
 

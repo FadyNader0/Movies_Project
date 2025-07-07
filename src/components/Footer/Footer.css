@@ -1,8 +1,9 @@
 .footer {
     background: var(--background2-color);
     padding: 1.5rem;
-    border-top: 2px solid var(--icon-color);
+    border-top: 2px solid var(--lines-color);
     margin-top: 50px;
+    margin-left: 200px;
 }
 
 .footer-content {
@@ -34,7 +35,7 @@
 }
 
 .footer-email {
-    color: var(--border-color);
+    color: var(--lines-color);
     font-size: 0.9rem;
     margin: 0;
 }
@@ -45,7 +46,7 @@
 }
 
 .footer-nav a {
-    color: var(--border-color);
+    color: var(--lines-color);
     text-decoration: none;
     transition: color 0.2s ease;
     font-size: 1rem;
@@ -62,7 +63,7 @@
 }
 
 .copyright {
-    color: var(--border-color);
+    color: gray;
     font-size: 0.9rem;
     margin: 0;
 }
@@ -78,5 +79,10 @@
         flex-direction: column;
         gap: 1rem;
         align-items: center;
+    }
+}
+@media (max-width: 720px) {
+    .footer{
+        margin-left: 0;
     }
 }

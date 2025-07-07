@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --background-color: #0a0a0a;
   --background2-color: #111111;
   --border-color: #615f5f;
@@ -8,4 +8,18 @@
   --box-hover-color: rgba(255, 0, 0, 0.05);
   --box-border-color: rgba(255, 0, 0, 0.1);
   --icon-hover-color: #ca262e;
+  --lines-color: #ca262e;
+} */
+
+:root {
+  --background-color: #080808;      
+  --background2-color: #0d121d;           
+  --border-color: #2c2f36;                
+  --icon-color: rgb(14, 158, 241);         
+  --icon-hover-color: rgb(56, 180, 255);  
+  --text-color: linear-gradient(90deg, #0e9ef1, #38bdf8); 
+  --box-color: rgba(14, 158, 241, 0.04); 
+  --box-hover-color: rgba(14, 158, 241, 0.479); 
+  --box-border-color: rgba(14, 158, 241, 0.322); 
+  --lines-color: #f5faff;
 }
