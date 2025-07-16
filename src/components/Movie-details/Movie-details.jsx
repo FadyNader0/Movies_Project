@@ -131,7 +131,7 @@ export default function MovieDetails({ movie, onClose }) {
                     </div>
                 </div>
 
-                <div className="movie-info-container">
+                <div className="movie-info-container" data-aos="zoom-in-up">
                     <div className="movie-header">
                         <h1 className="movie-tittle">{movieDetails.title}</h1>
                         <div className="movie-meta-details">
