@@ -23,9 +23,7 @@ export default function Search() {
     useEffect(() => {
         if (query) {
             navigate(`/movies-page?query=${encodeURIComponent(query)}`);
-        }else[
-            navigate('/movies-page')
-        ]
+        }
     },[query]);
 
     const handleClearHistory = (movie_history_index) => {
