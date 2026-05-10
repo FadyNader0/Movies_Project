@@ -266,7 +266,27 @@ useEffect(() => {
           <ShowMovies key={movie.id} movie={movie}  />
 
         ))}
+        
       </div>
+      <div className={`pagination-buttons mt-[50px]  ${actor && actor !=="" ? "hidden" : ""}`}>
+          <button  className="page-btn" disabled={page === 1} onClick={() =>{setpage(page - 1);setRefresh(refresh + 1);setMovies([])}}>
+              Prev</button>
+          <p className="page-number">Page 
+          <input 
+                className="input-page" 
+                type="number" 
+                placeholder={page}
+             
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' && e.target.value > 0 && e.target.value <= 500) {
+                    setpage(Number(e.target.value));
+                    e.target.value = '';
+                  }
+                }} />
+             </p>
+          <button  className="page-btn" disabled={page === 500} onClick={() =>{setpage(page + 1);setRefresh(refresh + 1);setMovies([])}}>Next</button>
+      </div>
+
     </div>
   );
 };
